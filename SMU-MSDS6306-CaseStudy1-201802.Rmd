@@ -1,0 +1,69 @@
+---
+title: "SMU MSDS 6306 Case Study 1: Beers, Breweries, and Bitterness"
+author: "Adil Siraj" "Garrett Mozey" "Dana Geislinger" "Luay Dajani"
+date: "February 17, 2018"
+output: 
+  html_document:
+    keep_md: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+#Add all initialization and Library files here
+
+```
+
+# Breweries
+
+Study of popular Brewed Beers from American domestic and craft varieties; shining a light on what makes them similar and different.  The study analyses the Brews and styles from Lagers, Ales, to the sweet ciders in addition to their bitterness, alcohol content, and where their respective breweries.  From this study we look to find out trends and cultures depending on location and taste, and possibly their appeal to the consumers.
+
+Goal is to analyze collected data, normalize and clean the data, and create analysis that will show an apperent relationship between the bitterness of the bear the alcoholic content. In addition show the bitterness and alcoholic content as per the location it was brewed to determine a trend in culture to that location.
+
+## Analysis 1: Number of Breweries per US State
+
+```{r num_breweries}
+
+
+```
+
+## Analysis 2: Merge of Beer & Breweries Data
+
+```{r data_merge}
+#
+
+```
+
+## Analysis 3: Missing Data (NA's in each column)
+
+```{r data_missing}
+#
+
+```
+
+## Analysis 4: Compute median alcohol content (ABV) and international bitterness unit (IBU) per each state.
+
+```{r data_abv_ibu}
+#
+
+```
+
+## Analysis 5: Show which state has the maximum alcoholic (ABV) beer and well as the most bitter.
+
+```{r data_state_statistics}
+#
+
+```
+
+## Analysis 6: Summary of statistics for the alcohol content (ABV).
+
+```{r data_abv_stats}
+#
+
+```
+
+## Analysis 7: Prove relationship between the bitterness of the beer nad its alcoholic content.
+
+```{r data_abv_stats}
+#
+
+```
