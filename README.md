@@ -2,6 +2,8 @@
 Tiger Team Case Study 1 repository
 <<<<<<< HEAD
 
+Testing a conflict scenario where one change is made and committed before
+ I check this change into GitHub.
 
 =======
 #TEST ADIL
