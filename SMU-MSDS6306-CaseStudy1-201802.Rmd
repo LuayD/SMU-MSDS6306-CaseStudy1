@@ -1,6 +1,6 @@
 ---
 title: "SMU MSDS 6306 Case Study 1: Beers, Breweries, and Bitterness"
-author: "Adil Siraj" "Garrett Mozey" "Dana Geislinger" "Luay Dajani"
+author: "Adil Siraj Garrett Mozey Dana Geislinger Luay Dajani"
 date: "February 17, 2018"
 output: 
   html_document:
@@ -92,7 +92,7 @@ tail(brew.data, 6)
 
 ## Analysis 7: Prove relationship between the bitterness of the beer nad its alcoholic content.
 
-```{r data_abv_stats}
+```{r ibu_vs_abv}
 #
 
 ```
