@@ -43,7 +43,66 @@ tail(brew.data, 6)
 
 ## Analysis 3: Missing Data (NA's in each column)
 
+# Create Vector Dataframe which indicates the missing data (NA's)  in each columns as TRUE or FALSE.
+brew.data.missing = is.na(brew.data)
+
+# Null out vector to be used in for loop
+number_NAs = NULL
+
+# Though not intened, creates vector of "Named ints" where the name of the row associated with each int value
+for (i in colnames(brew.data.missing))
+{
+  tempvec = brew.data.missing[,i]
+  number_NAs[i] = length(tempvec[tempvec != FALSE])
+}
+
+print(number_NAs)
+
 ## Analysis 4: Compute median alcohol content (ABV) and international bitterness unit (IBU) per each state.
+
+# Use "tapply" to find the the median IBU per state
+ABV_medians = tapply(brew.data$ABV   # Take the IBU column (numeric)
+                     , brew.data$State # Use the State column as the index (as factor) to associate IBU per State
+                     , function (x) {median(x, na.rm = TRUE)} #Run created function finding the median per State removing NULLs
+)
+
+#Print out the results
+cat("The Median Alcohol Content (ABV) per state:\n") #using cat to preserve the \n
+print(ABV_medians)
+
+#barplot of the ABV medians
+par(las = 2) #make the x axis name horizontal with the horizontal view
+par(mar=c(5,10,4,2)) # increase y-axis margin (c(bottom, left, top, right))
+barplot(ABV_medians
+        , main="Median Alcohol Content (ABV) per State"
+        , xlab="Median ABV"
+        , ylab="States"
+        , cex.names=0.5 #Font Size for the State names to squeeze them all in
+        , col=c("red","green","blue","orange","brown","purple","yellow")
+        , horiz=TRUE
+     )
+
+# Use "tapply" to find the the median IBU per state
+IBU_medians = tapply(brew.data$IBU   # Take the IBU column (numeric)
+       , brew.data$State # Use the State column as the index (as factor) to associate IBU per State
+       , function (x) {median(x, na.rm = TRUE)} #Run created function finding the median per State removing NULLs
+)
+
+#Print out the results
+cat("The International Bitterness Unit (IBU) per each state:\n") #using cat to preserve the \n
+print(IBU_medians)
+
+#barplot of the ABV medians
+par(las = 2) #make the y axis name horizontal with the horizontal view
+par(mar=c(5,10,4,2)) # increase y-axis margin (c(bottom, left, top, right))
+barplot(IBU_medians
+        , main="Median International Bitterness Unit (IBU)  per State"
+        , xlab="Median IBU"
+        , ylab="States"
+        , cex.names=0.5 #Font Size for the State names to squeeze them all in
+        , col=c("red","green","blue","orange","brown","purple","yellow")
+        , horiz=TRUE
+)
 
 ## Analysis 5: Show which state has the maximum alcoholic (ABV) beer and well as the most bitter.
 
