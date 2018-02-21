@@ -30,3 +30,5 @@
   * *Style* (factor): Style of the beer
   * *Ounces* (numeric vector): Ounces of beer
 * *breweries.by.state* (array): Number of breweries in each state
+* *ABV_medians* (named integer vector): Gives the Median Alcohol Content for beers per state manufactured
+* *IBU_medians* (named integer vector): Gives the International Bitterness Unit for beers per state manufactured
