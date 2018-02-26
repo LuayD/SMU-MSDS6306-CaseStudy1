@@ -17,9 +17,7 @@ Tiger Team Case Study 1:
                   
 Repository: Repository: https://github.com/danageis/SMU-MSDS6306-CaseStudy1
 
-Project Goal & Summary:
-
-Authors for this Effort are: Adil Siraj, Garrett Mozey, Dana Geislinger, and Luay Dajani.
+Beers, Breweries, and Bitterness Study Goal & Summary:
 
 Study of popular Brewed Beers from American domestic and craft varieties; shining a light on what makes them similar and different.  The study analyses the Brews and styles from Lagers, Ales, to the sweet ciders in addition to their bitterness, alcohol content, and where their respective breweries.  From this study we look to find out trends and cultures depending on location and taste, and possibly their appeal to the consumers.
 
@@ -29,12 +27,12 @@ Author Matrix:
 
 Author | Responsibility
 ---|---------
-`Dana Geislinger` | Github integration, Questions 1 & 2
-`Luay Dajani` | Project Tracking, Qestions 3 & 4
-`Adil Siraj` | Code Check, Questions 5 & 6
-`Garrett Mozey` | Quality Check, Question 7
+`Dana Geislinger` | Github integration, Parts 1 & 2
+`Luay Dajani` | Tracking, Parts 3 & 4
+`Adil Siraj` | Code Check, Parts 5 & 6
+`Garrett Mozey` | Quality Check, Part 7
 
-Important Project Resources:
+Resource Files:
 
 ## Presentation files
 File | Description
