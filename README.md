@@ -27,10 +27,10 @@ Author Matrix:
 
 Author | Responsibility
 ---|---------
-`Dana Geislinger` | Github integration, Parts 1 & 2
-`Luay Dajani` | Tracking, Parts 3 & 4
-`Adil Siraj` | Code Check, Parts 5 & 6
-`Garrett Mozey` | Quality Check, Part 7
+`Dana Geislinger` | Github integration, Analysis 1 & 2
+`Luay Dajani` | Tracking, Analysis 3 & 4
+`Adil Siraj` | Code Check, Analysis 5 & 6
+`Garrett Mozey` | Quality Check, Analysis 7
 
 Resource Files:
 

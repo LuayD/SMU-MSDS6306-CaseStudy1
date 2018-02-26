@@ -1,6 +1,6 @@
 ---
 title: "SMU MSDS 6306 Case Study 1: Beers, Breweries, and Bitterness"
-author: "Adil Siraj Garrett Mozey Dana Geislinger Luay Dajani"
+author: "Adil Siraj, Garrett Mozey, Dana Geislinger, & Luay Dajani"
 date: "February 17, 2018"
 output: 
   prettydoc::html_pretty:
@@ -20,6 +20,8 @@ library(prettydoc)
 Study of popular Brewed Beers from American domestic and craft varieties; shining a light on what makes them similar and different.  The study analyses the Brews and styles from Lagers, Ales, to the sweet ciders in addition to their bitterness, alcohol content, and where their respective breweries.  From this study we look to find out trends and cultures depending on location and taste, and possibly their appeal to the consumers.
 
 Goal is to analyze collected data, normalize and clean the data, and create analysis that will show an apperent relationship between the bitterness of the bear the alcoholic content. In addition show the bitterness and alcoholic content as per the location it was brewed to determine a trend in culture to that location.
+
+Repository: https://github.com/danageis/SMU-MSDS6306-CaseStudy1
 
 ## Analysis 1: Number of Breweries per US State
 
@@ -85,7 +87,7 @@ print(number_NAs)
 
 ## Analysis 4: Compute median alcohol content (ABV) and international bitterness unit (IBU) per each state.
 
-```{r data_abv_ibu}
+```{r data_abv_ibu, fig.width=10, fig.height=9}
 # Use "tapply" to find the the median IBU per state
 ABV_medians = tapply(brew.data$ABV   # Take the IBU column (numeric)
                      , brew.data$State # Use the State column as the index (as factor) to associate IBU per State
@@ -103,7 +105,7 @@ barplot(ABV_medians
         , main="Median Alcohol Content (ABV) per State"
         , xlab="Median ABV"
         , ylab="States"
-        , cex.names=0.5 #Font Size for the State names to squeeze them all in
+        , cex.names=0.7 #Font Size for the State names to squeeze them all in
         , col=c("red","green","blue","orange","brown","purple","yellow")
         , horiz=TRUE
      )
@@ -125,7 +127,7 @@ barplot(IBU_medians
         , main="Median International Bitterness Unit (IBU)  per State"
         , xlab="Median IBU"
         , ylab="States"
-        , cex.names=0.5 #Font Size for the State names to squeeze them all in
+        , cex.names=0.7 #Font Size for the State names to squeeze them all in
         , col=c("red","green","blue","orange","brown","purple","yellow")
         , horiz=TRUE
 )
@@ -146,7 +148,7 @@ barplot(IBU_medians
 
 ```
 
-## Analysis 7: Prove relationship between the bitterness of the beer nad its alcoholic content.
+## Analysis 7: Prove relationship between the bitterness of the beer and its alcoholic content.
 
 ```{r ibu_vs_abv}
 #
