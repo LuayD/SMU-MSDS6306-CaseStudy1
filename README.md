@@ -15,7 +15,7 @@ Tiger Team Case Study 1:
           _,______'__ddd'_______._____""__ddd'___SK______
                   __________,______.   _._ (from: http://www.ascii-art.de/ascii/t/tiger.txt)
                   
-Repository: Repository: https://github.com/danageis/SMU-MSDS6306-CaseStudy1
+Repository: https://github.com/danageis/SMU-MSDS6306-CaseStudy1
 
 Beers, Breweries, and Bitterness Study Goal & Summary:
 
