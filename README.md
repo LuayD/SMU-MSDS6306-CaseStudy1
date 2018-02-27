@@ -28,7 +28,7 @@ Author Matrix:
 Author | Responsibility
 ---|---------
 `Dana Geislinger` | Github integration, Analysis 1 & 2
-`Luay Dajani` | Tracking, Analysis 3 & 4
+`Luay Dajani` | Tracking & Coordination, Analysis 3 & 4
 `Adil Siraj` | Code Check, Analysis 5 & 6
 `Garrett Mozey` | Quality Check, Analysis 7
 
