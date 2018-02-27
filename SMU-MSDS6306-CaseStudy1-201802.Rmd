@@ -3,16 +3,13 @@ title: "SMU MSDS 6306 Case Study 1: Beers, Breweries, and Bitterness"
 author: "Adil Siraj, Garrett Mozey, Dana Geislinger, & Luay Dajani"
 date: "February 17, 2018"
 output: 
-  prettydoc::html_pretty:
-    theme: cayman
-    highlight: github
+  html_document:
+    keep_md: true
 ---
 
 ```{r setup, include=FALSE, echo=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-#Add all initialization and Library files here
-install.packages("prettydoc", repos = "https://cran.rstudio.com")
-library(prettydoc)
+
 ```
 
 # Breweries
