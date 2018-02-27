@@ -105,11 +105,11 @@ barplot(IBU_medians
 )
 
 ## Analysis 5: Show which state has the maximum alcoholic (ABV) beer and well as the most bitter.
-ABV=brew.data[c('State','ABV')]
-ABV[which.max(brew.data$ABV),]['State'] 
+ABV=brew.data[c('State','ABV')] # This  will give out the Alcohlic content in beer for every state
+ABV[which.max(brew.data$ABV),]['State'] #This  will give out the maximum Alcohlic content in beer out of all states
 
-IBU=brew.data[c('State','IBU')]
-IBU[which.max(brew.data$IBU),]['State'] 
+IBU=brew.data[c('State','IBU')]# This  will give out the bitterness unit in beer for every state
+IBU[which.max(brew.data$IBU),]['State'] #This  will give out the most bitter beer out of all states
 
 
 ## Analysis 6: Summary of statistics for the alcohol content (ABV).
