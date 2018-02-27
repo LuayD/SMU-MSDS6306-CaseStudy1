@@ -162,3 +162,6 @@ barplot(IBU_medians
 sessionInfo()
 
 ```
+
+## Conclusion
+In this study, data from United States breweries and the beers they produce were merged into a single dataset and used to investigate the distribution of breweries across the country.
