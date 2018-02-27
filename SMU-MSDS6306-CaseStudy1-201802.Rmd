@@ -156,8 +156,8 @@ IBU=brew.data[c('State','IBU')] # Obtain data for bitterness in beer per state
 IBU[which.max(brew.data$IBU),]['State'] # get the most bitter beer out of all states
 
 ```
-COlorado has the maximum Alcoholic beer volume with 0.126 of contents
-Oregon has the most bitter beer taste out of all states with bitterness unit of 138
+Colorado has beer with the maximum alcoholic contents of 0.126 out of all states
+Oregon has the most bitter beer taste out of all states with international bitterness unit of 138
 
 ## Analysis 6: Summary of statistics for the alcohol content (ABV).
 
