@@ -196,7 +196,8 @@ scatter_with_labels = basic_plot +
 
 # Add regression line smoothing to aid in seeing patterns
 scatter_smoothed = scatter_with_labels + 
-                    stat_smooth(method="gam",na.rm = TRUE) # line smoothing call
+                    stat_smooth(method="auto"  # line smoothing call
+                                ,na.rm = TRUE) # silently remove missing values without warning 
 
 # Display the scatter plot
 scatter_smoothed 
