@@ -176,7 +176,7 @@ The plot analysis below depicts the relationship between the bitterness of the b
 and its alcoholic content using a scatter plot with a smoothed line that is meant
 to easily demonstrate any apparent data pattern.
 
-```{r ibu_vs_abv}
+```{r ibu_vs_abv, fig.width=10, fig.height=9}
 # Invoking library to use ggplot2
 library(ggplot2)
 
@@ -192,7 +192,7 @@ scatter_with_labels = basic_plot +
                       geom_point(na.rm = TRUE) +  # scatter points added 
                       labs(x = "IBU", 
                            y = "ABV", 
-                           title= "Linear Regression")
+                           title= "Alcohol Content (ABV) vs. International Bitterness Unit (IBU) per State")
 
 # Add regression line smoothing to aid in seeing patterns
 scatter_smoothed = scatter_with_labels + 
