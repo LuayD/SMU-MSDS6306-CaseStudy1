@@ -115,4 +115,31 @@ IBU[which.max(brew.data$IBU),]['State']
 ## Analysis 6: Summary of statistics for the alcohol content (ABV).
 summary(ABV$ABV)
 
-## Analysis 7: Prove relationship between the bitterness of the beer nad its alcoholic content/
+## Analysis 7: Prove relationship between the bitterness of the beer and its alcoholic content/
+
+# Invoking library to use ggplot2
+library(ggplot2)
+
+# Assigning 'IBU' and 'ABV' columns from brew data frame to 'IBU_ABV' variable
+IBU_ABV = brew.data[c('IBU','ABV')]
+
+# Setting up basic plot 
+basic_plot = ggplot(IBU_ABV, # Assign data using 'IBU_ABV' variable 
+                  aes(IBU,ABV)) # Construct aesthetic mappings for two data columns
+
+# Add scatter points to basic plot along with axis labels and a plot title  
+scatter_with_labels = basic_plot + 
+                      geom_point() +  # scatter points added 
+                      labs(x = "IBU", 
+                           y = "ABV", 
+                           title= "Linear Regression")
+
+# Add regression line smoothing to aid in seeing patterns
+scatter_smoothed = scatter_with_labels + 
+                    stat_smooth(method="auto") # line smoothing call
+
+# Display the scatter plot
+scatter_smoothed 
+
+
+
