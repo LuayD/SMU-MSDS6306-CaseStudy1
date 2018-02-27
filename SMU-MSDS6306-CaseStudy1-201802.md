@@ -18,6 +18,7 @@ Goal is to analyze collected data, normalize and clean the data, and create anal
 Repository: https://github.com/danageis/SMU-MSDS6306-CaseStudy1
 
 ## Analysis 1: Number of Breweries per US State
+In this analysis, raw brewery data is imported and analyzed to find the number of breweries in each state.
 
 
 ```r
@@ -65,7 +66,10 @@ print(breweries.by.state)
 ##  4
 ```
 
+The preceeding table lists the number of breweries located in each state. There are 558 breweries total in the data set, and the number of breweries in each state ranges from 1 to 47.
+
 ## Analysis 2: Merge of Beer & Breweries Data
+In this analysis, raw beer data is imported and merged with the brewery data from the previous analysis. The first and last 6 observations of this merged data set are printed to verify the structure of the merged dataset.
 
 
 ```r
@@ -169,6 +173,8 @@ tail(brew.data, 6)
 ## 2410     12
 ```
 
+The beer and brewery datasets have been merged (by Brewery ID) successfully. To verify the structure of the merged data, the first and last 6 rows are printed above.
+
 ## Analysis 3: Missing Data (NA's in each column)
 
 
@@ -210,6 +216,44 @@ ABV_medians = tapply(brew.data$ABV   # Take the IBU column (numeric)
 cat("The Median Alcohol Content (ABV) per state:\n") #using cat to preserve the \n
 ```
 
+<<<<<<< HEAD
+=======
+```
+## The Median Alcohol Content (ABV) per state:
+```
+
+```r
+print(ABV_medians)
+```
+
+```
+##     AK     AL     AR     AZ     CA     CO     CT     DC     DE     FL 
+## 0.0560 0.0600 0.0520 0.0550 0.0580 0.0605 0.0600 0.0625 0.0550 0.0570 
+##     GA     HI     IA     ID     IL     IN     KS     KY     LA     MA 
+## 0.0550 0.0540 0.0555 0.0565 0.0580 0.0580 0.0500 0.0625 0.0520 0.0540 
+##     MD     ME     MI     MN     MO     MS     MT     NC     ND     NE 
+## 0.0580 0.0510 0.0620 0.0560 0.0520 0.0580 0.0550 0.0570 0.0500 0.0560 
+##     NH     NJ     NM     NV     NY     OH     OK     OR     PA     RI 
+## 0.0550 0.0460 0.0620 0.0600 0.0550 0.0580 0.0600 0.0560 0.0570 0.0550 
+##     SC     SD     TN     TX     UT     VA     VT     WA     WI     WV 
+## 0.0550 0.0600 0.0570 0.0550 0.0400 0.0565 0.0550 0.0555 0.0520 0.0620 
+##     WY 
+## 0.0500
+```
+
+```r
+#barplot of the ABV medians
+par(las = 2) #make the x axis name horizontal with the horizontal view
+par(mar=c(5,10,4,2)) # increase y-axis margin (c(bottom, left, top, right))
+barplot(ABV_medians
+        , main="Median Alcohol Content (ABV) per State"
+        , xlab="Median ABV"
+        , ylab="States"
+        , cex.names=0.7 #Font Size for the State names to squeeze them all in
+        , col=c("red","green","blue","orange","brown","purple","yellow")
+        , horiz=TRUE
+     )
+>>>>>>> 7b468c4f53363f6887e62df5e993b07ebfcefbcd
 ```
 ## The Median Alcohol Content (ABV) per state:
 ```
@@ -295,6 +339,54 @@ barplot(IBU_medians
 
 ![](SMU-MSDS6306-CaseStudy1-201802_files/figure-html/data_abv_ibu-2.png)<!-- -->
 
+![](SMU-MSDS6306-CaseStudy1-201802_files/figure-html/data_abv_ibu-1.png)<!-- -->
+
+```r
+# Use "tapply" to find the the median IBU per state
+IBU_medians = tapply(brew.data$IBU   # Take the IBU column (numeric)
+       , brew.data$State # Use the State column as the index (as factor) to associate IBU per State
+       , function (x) {median(x, na.rm = TRUE)} #Run created function finding the median per State removing NULLs
+)
+
+#Print out the results
+cat("The International Bitterness Unit (IBU) per each state:\n") #using cat to preserve the \n
+```
+
+```
+## The International Bitterness Unit (IBU) per each state:
+```
+
+```r
+print(IBU_medians)
+```
+
+```
+##   AK   AL   AR   AZ   CA   CO   CT   DC   DE   FL   GA   HI   IA   ID   IL 
+## 46.0 43.0 39.0 20.5 42.0 40.0 29.0 47.5 52.0 55.0 55.0 22.5 26.0 39.0 30.0 
+##   IN   KS   KY   LA   MA   MD   ME   MI   MN   MO   MS   MT   NC   ND   NE 
+## 33.0 20.0 31.5 31.5 35.0 29.0 61.0 35.0 44.5 24.0 45.0 40.0 33.5 32.0 35.0 
+##   NH   NJ   NM   NV   NY   OH   OK   OR   PA   RI   SC   SD   TN   TX   UT 
+## 48.5 34.5 51.0 41.0 47.0 40.0 35.0 40.0 30.0 24.0 30.0   NA 37.0 33.0 34.0 
+##   VA   VT   WA   WI   WV   WY 
+## 42.0 30.0 38.0 19.0 57.5 21.0
+```
+
+```r
+#barplot of the ABV medians
+par(las = 2) #make the y axis name horizontal with the horizontal view
+par(mar=c(5,10,4,2)) # increase y-axis margin (c(bottom, left, top, right))
+barplot(IBU_medians
+        , main="Median International Bitterness Unit (IBU)  per State"
+        , xlab="Median IBU"
+        , ylab="States"
+        , cex.names=0.7 #Font Size for the State names to squeeze them all in
+        , col=c("red","green","blue","orange","brown","purple","yellow")
+        , horiz=TRUE
+)
+```
+
+![](SMU-MSDS6306-CaseStudy1-201802_files/figure-html/data_abv_ibu-2.png)<!-- -->
+
 ## Analysis 5: Show which state has the maximum alcoholic (ABV) beer and well as the most bitter.
 
 
@@ -320,10 +412,19 @@ barplot(IBU_medians
 
 
 ```
+<<<<<<< HEAD
 ## R version 3.3.2 (2016-10-31)
 ## Platform: x86_64-w64-mingw32/x64 (64-bit)
 ## Running under: Windows 10 x64 (build 16299)
 ## 
+=======
+## R version 3.4.3 (2017-11-30)
+## Platform: x86_64-w64-mingw32/x64 (64-bit)
+## Running under: Windows 10 x64 (build 16299)
+## 
+## Matrix products: default
+## 
+>>>>>>> 7b468c4f53363f6887e62df5e993b07ebfcefbcd
 ## locale:
 ## [1] LC_COLLATE=English_United States.1252 
 ## [2] LC_CTYPE=English_United States.1252   
@@ -334,6 +435,7 @@ barplot(IBU_medians
 ## attached base packages:
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
+<<<<<<< HEAD
 ## other attached packages:
 ## [1] RevoUtilsMath_10.0.0 RevoUtils_10.0.2     RevoMods_10.0.0     
 ## [4] MicrosoftML_1.0.0    mrsdeploy_1.0        RevoScaleR_9.0.1    
@@ -347,4 +449,11 @@ barplot(IBU_medians
 ## [13] stringi_1.1.2          curl_2.2               rmarkdown_1.8         
 ## [16] iterators_1.0.8        tools_3.3.2            stringr_1.2.0         
 ## [19] yaml_2.1.13            htmltools_0.3.5        knitr_1.14
+=======
+## loaded via a namespace (and not attached):
+##  [1] compiler_3.4.3  backports_1.1.2 magrittr_1.5    rprojroot_1.3-1
+##  [5] tools_3.4.3     htmltools_0.3.6 yaml_2.1.16     Rcpp_0.12.14   
+##  [9] stringi_1.1.6   rmarkdown_1.8   knitr_1.18      stringr_1.2.0  
+## [13] digest_0.6.13   evaluate_0.10.1
+>>>>>>> 7b468c4f53363f6887e62df5e993b07ebfcefbcd
 ```
