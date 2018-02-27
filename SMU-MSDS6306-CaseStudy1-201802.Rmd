@@ -11,7 +11,7 @@ output:
 ```{r setup, include=FALSE, echo=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 #Add all initialization and Library files here
-install.packages("prettydoc")
+install.packages("prettydoc", repos = "https://cran.rstudio.com")
 library(prettydoc)
 ```
 
