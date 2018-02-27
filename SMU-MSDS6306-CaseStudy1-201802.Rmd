@@ -189,18 +189,17 @@ basic_plot = ggplot(IBU_ABV, # Assign data using 'IBU_ABV' variable
 
 # Add scatter points to basic plot along with axis labels and a plot title  
 scatter_with_labels = basic_plot + 
-                      geom_point() +  # scatter points added 
+                      geom_point(na.rm = TRUE) +  # scatter points added 
                       labs(x = "IBU", 
                            y = "ABV", 
                            title= "Linear Regression")
 
 # Add regression line smoothing to aid in seeing patterns
 scatter_smoothed = scatter_with_labels + 
-                    stat_smooth(method="auto") # line smoothing call
+                    stat_smooth(method="gam",na.rm = TRUE) # line smoothing call
 
 # Display the scatter plot
 scatter_smoothed 
-
 
 ```
 As shown above with the smoothed line, the general pattern indicates that as alcoholic volume (ABV) increases, the bitterness also increases. Once the alcoholic volume (ABV) approaches about 0.08 units and the bitterness (IBU) reaches 100 units, there are far less beer samples. Most of the beer samples tend to be relatively less bitter and lower in alcoholic volume.

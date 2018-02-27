@@ -133,14 +133,14 @@ basic_plot = ggplot(IBU_ABV, # Assign data using 'IBU_ABV' variable
 
 # Add scatter points to basic plot along with axis labels and a plot title  
 scatter_with_labels = basic_plot + 
-                      geom_point() +  # scatter points added 
+                      geom_point(na.rm = TRUE) +  # scatter points added 
                       labs(x = "IBU", 
                            y = "ABV", 
                            title= "Linear Regression")
 
 # Add regression line smoothing to aid in seeing patterns
 scatter_smoothed = scatter_with_labels + 
-                    stat_smooth(method="auto") # line smoothing call
+                    stat_smooth(method="gam",na.rm = TRUE) # line smoothing call
 
 # Display the scatter plot
 scatter_smoothed 
