@@ -33,3 +33,5 @@
 * *breweries.by.state* (array): Number of breweries in each state
 * *ABV_medians* (named integer vector): Gives the Median Alcohol Content for beers per state manufactured
 * *IBU_medians* (named integer vector): Gives the International Bitterness Unit for beers per state manufactured
+* *ABV* (Integer vector): Gives the maximum Alcoholic beer by state
+* *IBU* (Integer vector): Gives the most bitter beer by state
