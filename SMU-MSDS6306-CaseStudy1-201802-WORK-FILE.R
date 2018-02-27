@@ -105,7 +105,14 @@ barplot(IBU_medians
 )
 
 ## Analysis 5: Show which state has the maximum alcoholic (ABV) beer and well as the most bitter.
+ABV=brew.data[c('State','ABV')]
+ABV[which.max(brew.data$ABV),]['State'] 
+
+IBU=brew.data[c('State','IBU')]
+IBU[which.max(brew.data$IBU),]['State'] 
+
 
 ## Analysis 6: Summary of statistics for the alcohol content (ABV).
+summary(ABV$ABV)
 
 ## Analysis 7: Prove relationship between the bitterness of the beer nad its alcoholic content/
