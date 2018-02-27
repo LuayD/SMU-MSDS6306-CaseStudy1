@@ -136,7 +136,7 @@ scatter_with_labels = basic_plot +
                       geom_point(na.rm = TRUE) +  # scatter points added 
                       labs(x = "IBU", 
                            y = "ABV", 
-                           title= "Alcohol Content (ABV) vs. International Bitterness Unit (IBU) per State")
+                           title= "Alcohol Content (ABV) vs. International Bitterness Unit (IBU) per Brew")
 
 # Add regression line smoothing to aid in seeing patterns
 scatter_smoothed = scatter_with_labels + 
