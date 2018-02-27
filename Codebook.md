@@ -1,4 +1,5 @@
 # Codebook for Case Study 1
+# 02/26/2018: testing update through R-Studio (Garrett)
 
 ### Directories
 * **Raw Data:** Contains all raw data files used in the study
