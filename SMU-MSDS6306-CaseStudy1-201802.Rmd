@@ -21,6 +21,7 @@ Goal is to analyze collected data, normalize and clean the data, and create anal
 Repository: https://github.com/danageis/SMU-MSDS6306-CaseStudy1
 
 ## Analysis 1: Number of Breweries per US State
+In this analysis, raw brewery data is imported and analyzed to find the number of breweries in each state.
 
 ```{r num_breweries}
 # Import breweries data and preview data structure.
@@ -36,10 +37,12 @@ str(breweries)
 # Since each row is a brewery, the number of occurences of each state equals the number of breweries in that state.
 breweries.by.state = tapply(breweries$State, breweries$State, length)
 print(breweries.by.state)
-
 ```
 
+The preceeding table lists the number of breweries located in each state. There are 558 breweries total in the data set, and the number of breweries in each state ranges from 1 to 47.
+
 ## Analysis 2: Merge of Beer & Breweries Data
+In this analysis, raw beer data is imported and merged with the brewery data from the previous analysis. The first and last 6 observations of this merged data set are printed to verify the structure of the merged dataset.
 
 ```{r data_merge}
 # Import beer data and preview data structure.
@@ -60,8 +63,9 @@ str(brew.data)
 # Print first 6 and last 6 observations of the merged data for verification.
 head(brew.data, 6)
 tail(brew.data, 6)
-
 ```
+
+The beer and brewery datasets have been merged (by Brewery ID) successfully. To verify the structure of the merged data, the first and last 6 rows are printed above.
 
 ## Analysis 3: Missing Data (NA's in each column)
 
