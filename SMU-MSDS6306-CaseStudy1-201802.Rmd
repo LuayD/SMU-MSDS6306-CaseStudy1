@@ -168,7 +168,7 @@ summary(ABV$ABV)
 #0.00100 0.05000 0.05600 0.05977 0.06700 0.12800      62 
 
 ```
-As per the summary, Maximum Alcoholic content is 0.128
+As per the summary, Maximum Alcoholic content in beer is 0.128 which is in Colorado and mimimum is in California which is .001
 
 ## Analysis 7: Prove relationship between the bitterness of the beer and its alcoholic content.
 
