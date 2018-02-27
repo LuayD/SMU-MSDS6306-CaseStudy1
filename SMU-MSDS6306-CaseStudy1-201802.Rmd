@@ -172,10 +172,39 @@ As per the summary, Maximum Alcoholic content in beer is 0.128 which is in Color
 
 ## Analysis 7: Prove relationship between the bitterness of the beer and its alcoholic content.
 
+The plot analysis below depicts the relationship between the bitterness of the beer
+and its alcoholic content using a scatter plot with a smoothed line that is meant
+to easily demonstrate any apparent data pattern.
+
 ```{r ibu_vs_abv}
-#
+# Invoking library to use ggplot2
+library(ggplot2)
+
+# Assigning 'IBU' and 'ABV' columns from brew data frame to 'IBU_ABV' variable
+IBU_ABV = brew.data[c('IBU','ABV')]
+
+# Setting up basic plot 
+basic_plot = ggplot(IBU_ABV, # Assign data using 'IBU_ABV' variable 
+                  aes(IBU,ABV)) # Construct aesthetic mappings for two data columns
+
+# Add scatter points to basic plot along with axis labels and a plot title  
+scatter_with_labels = basic_plot + 
+                      geom_point() +  # scatter points added 
+                      labs(x = "IBU", 
+                           y = "ABV", 
+                           title= "Linear Regression")
+
+# Add regression line smoothing to aid in seeing patterns
+scatter_smoothed = scatter_with_labels + 
+                    stat_smooth(method="auto") # line smoothing call
+
+# Display the scatter plot
+scatter_smoothed 
+
 
 ```
+As shown above with the smoothed line, the general pattern indicates that as alcoholic volume (ABV) increases, the bitterness also increases. Once the alcoholic volume (ABV) approaches about 0.08 units and the bitterness (IBU) reaches 100 units, there are far less beer samples. Most of the beer samples tend to be relatively less bitter and lower in alcoholic volume.
+
 
 ## Conclusion
 In this study, data from United States breweries and the beers they produce were merged into a single dataset and used to investigate the distribution of breweries across the country.
