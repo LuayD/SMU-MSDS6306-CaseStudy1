@@ -14,9 +14,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Breweries
 
-Study of popular Brewed Beers from American domestic and craft varieties; shining a light on what makes them similar and different.  The study analyses the Brews and styles from Lagers, Ales, to the sweet ciders in addition to their bitterness, alcohol content, and where their respective breweries.  From this study we look to find out trends and cultures depending on location and taste, and possibly their appeal to the consumers.
+Study of Brewed Beers from American domestic and craft varieties from independent breweries and not including bigger massed produced varieties; shining a light on what makes them similar and different.  The study analyses the Brews and styles from Lagers, Ales, to the sweet ciders in addition to their bitterness, alcohol content, and where their respective breweries.  From this study we look to find out trends and cultures depending on location and taste, and possibly their appeal to the consumers.
 
-Goal is to analyze collected data, normalize and clean the data, and create analysis that will show an apperent relationship between the bitterness of the bear the alcoholic content. In addition show the bitterness and alcoholic content as per the location it was brewed to determine a trend in culture to that location.
+Goal is to analyze collected data, normalize and clean the data, and create analysis that will show an apparent  relationship between the bitterness of the bear the alcoholic content. In addition, show the bitterness and alcoholic content as per the location it was brewed to determine a trend in culture to that location.
 
 Repository: https://github.com/danageis/SMU-MSDS6306-CaseStudy1
 
@@ -34,12 +34,12 @@ breweries$State = as.factor(trimws(breweries$State))
 str(breweries)
 
 # Print number of breweries in each state.
-# Since each row is a brewery, the number of occurences of each state equals the number of breweries in that state.
+# Since each row is a brewery, the number of occurrences of each state equals the number of breweries in that state.
 breweries.by.state = tapply(breweries$State, breweries$State, length)
 print(breweries.by.state)
 ```
 
-The preceeding table lists the number of breweries located in each state. There are 558 breweries total in the data set, and the number of breweries in each state ranges from 1 to 47.
+The preceding table lists the number of breweries located in each state. There are 558 breweries total in the data set, and the number of breweries in each state ranges from 1 to 47.  An interesting observation of the numbers of breweries per state show a trend that more populous states generally have more breweries with a correlation to the populations.  California, Texas, and New York have 39, 28, and 19 breweries respectively which roughly calculates to 1 brewery per million inhabitants (http://www.enchantedlearning.com/usa/states/population.shtml).  Likewise North Dakota and South Dakota follow that same trend having only 1 brewery each and a population of less than 1 million each.  Nevertheless, there are outliers like Colorado that have the highest number of total breweries with 47 and a population of around 5.3 million, giving them a ratio of 6 breweries per 1 million inhabitants.
 
 ## Analysis 2: Merge of Beer & Breweries Data
 In this analysis, raw beer data is imported and merged with the brewery data from the previous analysis. The first and last 6 observations of this merged data set are printed to verify the structure of the merged dataset.
@@ -65,7 +65,7 @@ head(brew.data, 6)
 tail(brew.data, 6)
 ```
 
-The beer and brewery datasets have been merged (by Brewery ID) successfully. To verify the structure of the merged data, the first and last 6 rows are printed above.
+The beer and brewery datasets have been merged (by Brewery ID) successfully. To verify the structure of the merged data, the first and last 6 rows are printed above.  This gives a comprehensive link between all of the imported data.
 
 ## Analysis 3: Missing Data (NA's in each column)
 
@@ -78,7 +78,7 @@ brew.data.missing = is.na(brew.data)
 # Null out vector to be used in for loop
 number_NAs = NULL
 
-# Though not intened, creates vector of "Named ints" where the name of the row associated with each int value
+# Though not intended, creates vector of "Named ints" where the name of the row associated with each int value
 for (i in colnames(brew.data.missing))
 {
   tempvec = brew.data.missing[,i]
@@ -92,7 +92,7 @@ From a total of 2,004 total different brews. The results above indicate that out
 
 ## Analysis 4: Compute median alcohol content (ABV) and international bitterness unit (IBU) per each state.
 
-The analysis below will compute the mid-range (median) of the alcohol content (ABV) and international bitterness unit (IBU) per state where that data is available to determine if there is a specific trend or culture associated with the breweries in a specific state.
+The analysis below will compute the mid-range (median) of the alcohol content or alcohol per volume (ABV) and international bitterness unit (IBU) per state where that data is available to determine if there is a specific trend or culture associated with the breweries in a specific state.
 
 ```{r data_abv_ibu, fig.width=10, fig.height=9}
 # Use "tapply" to find the the median IBU per state
@@ -141,23 +141,24 @@ barplot(IBU_medians
 
 ```
 
-As per the bar plots above, the states with the highest alcohol content are DC (Washington DC) then Kentucky, while the states brewing bear with a lesser alcohol content would be Utah then New Jersey.
+As per the bar plots above, the states with the highest middle or median alcohol content are DC (Washington DC) and Kentucky is around 6.25%.  Seems like a bit of political play with the politicians in DC to have such strong beer.  On the flip side, the states brewing bear with a lesser alcohol content are Utah and New Jersey with a median ABV or 4% and 4.6% respectively.  To put this more into perspective, some of the mass-produced beers like Budweiser has a %5.0 ABV, while Bud Light and Miller Light both have 4.2% (http://www.realbeer.com/edu/health/calories.php).
 
-Likewise, the states making the most bitter bear are Maine followed by West Virginia, while the states brewing the least bitter bear are Wisconsin then Kansas, with South Dakota not having any bitterness data for their brews.
+Likewise, the states making the most bitter bear are Maine followed by West Virginia, while the states brewing the least bitter bear are Wisconsin then Kansas, with South Dakota not having any bitterness data for their brews.  As a note on this, only around half of the beers had bitterness data, so results could differ if there was more data concerning other beers.
 
 ## Analysis 5: Show which state has the maximum alcoholic (ABV) beer and well as the most bitter.
 
 ```{r data_state_statistics}
 ### to get the Maximum Alcoholic beer per state
 ABV=brew.data[c('State','ABV')] # Obtain data for alcoholic contents per state
+print("State with highest ABV Beer:")
 ABV[which.max(brew.data$ABV),]['State']  # get the maximum of Alcoholic content out of all states
 
 IBU=brew.data[c('State','IBU')] # Obtain data for bitterness in beer per state
+print("State with highest IBU Beer:")
 IBU[which.max(brew.data$IBU),]['State'] # get the most bitter beer out of all states
 
 ```
-Colorado has beer with the maximum alcoholic contents of 0.126 out of all states
-Oregon has the most bitter beer taste out of all states with international bitterness unit of 138
+Colorado has the beer with the maximum alcoholic contents of 12.6% alcohol content by volume (ABV) from a beer called "Lee Hill Series Vol. 5".  Colorado, with 47 breweries, the highest amount breweries than any other state and one of the highest ratios of breweries per population with 6 breweries per 1 million inhabitants; each brewery likely has to contend with many other varieties and must have a distinguishing beer in their repertoire of brews.  Oregon has the beer suitably named "Bitter Bitch Imperial" with the most bitter beer taste and highest international bitterness unit (IBU) of 138.
 
 ## Analysis 6: Summary of statistics for the alcohol content (ABV).
 
@@ -168,13 +169,11 @@ summary(ABV$ABV)
 #0.00100 0.05000 0.05600 0.05977 0.06700 0.12800      62 
 
 ```
-As per the summary, Maximum Alcoholic content in beer is 0.128 which is in Colorado and mimimum is in California which is .001
+To put the statistics in perspective, As per the summary results above, the Maximum Alcoholic content (ABV) in beer is 12.8% which is in Colorado and minimum is in California which is 0.1%, while the Median is 5.6% and the average ABV iss 5.9%.  As per the previous note, mass produced beers like Bud Light and Budweiser are generally between %4.2 and %5.0 respectively, so this puts the average craft brews a slight bit higher in terms of average alcohol content.
 
 ## Analysis 7: Prove relationship between the bitterness of the beer and its alcoholic content.
 
-The plot analysis below depicts the relationship between the bitterness of the beer
-and its alcoholic content using a scatter plot with a smoothed line that is meant
-to easily demonstrate any apparent data pattern.
+The plot analysis below depicts the relationship between the bitterness of the beer and its alcoholic content using a scatter plot with a smoothed line that is meant to easily demonstrate any apparent data pattern.
 
 ```{r ibu_vs_abv, fig.width=10, fig.height=9}
 # Invoking library to use ggplot2
@@ -205,9 +204,9 @@ scatter_smoothed
 ```
 As shown above with the smoothed line, the general pattern indicates that as alcoholic volume (ABV) increases, the bitterness also increases. Once the alcoholic volume (ABV) approaches about 0.08 units and the bitterness (IBU) reaches 100 units, there are far less beer samples. Most of the beer samples tend to be relatively less bitter and lower in alcoholic volume.
 
-
 ## Conclusion
-In this study, data from United States breweries and the beers they produce were merged into a single dataset and used to investigate the distribution of breweries across the country.
+
+In this study, data from United States breweries and craft beers they produce were merged into a single dataset and used to investigate the distribution of breweries across the country.  The data allowed for a good amount of analysis into trends based on the craft beers.  This includes the conclusion that there is a strong correlation between the bitterness of the beer and the alcohol content.  That does not mean that the most bitter bear from Oregon has the most alcohol content as its content is 8.2% vs the maximum of 12.8%, but are still relatively high as similar ABVs for bears on the list with high bitterness indexes.  Likewise, low bitterness indexes generally correlate to lower alcohol contents.
 
 ## Environment Notes
 
