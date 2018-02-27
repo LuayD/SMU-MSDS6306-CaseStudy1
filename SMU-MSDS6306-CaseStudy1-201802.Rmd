@@ -69,6 +69,8 @@ The beer and brewery datasets have been merged (by Brewery ID) successfully. To 
 
 ## Analysis 3: Missing Data (NA's in each column)
 
+The analysis below examines the data to see which values are missing per observation or per row in order to determine how representative the data will be after all subsequent analysis is completed.
+
 ```{r data_missing}
 # Create Vector Dataframe which indicates the missing data (NA's)  in each columns as TRUE or FALSE.
 brew.data.missing = is.na(brew.data)
@@ -86,7 +88,11 @@ for (i in colnames(brew.data.missing))
 print(number_NAs)
 ```
 
+From a total of 2,004 total different brews. The results above indicate that out of the 2,004 total, 62 of the beers will not have an indication of its Alcohol By Volume (ABV) and 1,005 beers will not indicate their International Bitterness Unit (IBU).  This means that trying to make assumptions on ABV and IBU will only be valid for around half the data collected.
+
 ## Analysis 4: Compute median alcohol content (ABV) and international bitterness unit (IBU) per each state.
+
+The analysis below will compute the mid-range (median) of the alcohol content (ABV) and international bitterness unit (IBU) per state where that data is available to determine if there is a specific trend or culture associated with the breweries in a specific state.
 
 ```{r data_abv_ibu, fig.width=10, fig.height=9}
 # Use "tapply" to find the the median IBU per state
@@ -135,6 +141,10 @@ barplot(IBU_medians
 
 ```
 
+As per the bar plots above, the states with the highest alcohol content are DC (Washington DC) then Kentucky, while the states brewing bear with a lesser alcohol content would be Utah then New Jersey.
+
+Likewise, the states making the most bitter bear are Maine followed by West Virginia, while the states brewing the least bitter bear are Wisconsin then Kansas, with South Dakota not having any bitterness data for their brews.
+
 ## Analysis 5: Show which state has the maximum alcoholic (ABV) beer and well as the most bitter.
 
 ```{r data_state_statistics}
@@ -156,12 +166,12 @@ barplot(IBU_medians
 
 ```
 
+## Conclusion
+In this study, data from United States breweries and the beers they produce were merged into a single dataset and used to investigate the distribution of breweries across the country.
+
 ## Environment Notes
 
 ```{r environment_notes, echo=FALSE}
 sessionInfo()
 
 ```
-
-## Conclusion
-In this study, data from United States breweries and the beers they produce were merged into a single dataset and used to investigate the distribution of breweries across the country.
