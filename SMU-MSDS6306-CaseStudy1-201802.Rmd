@@ -148,15 +148,30 @@ Likewise, the states making the most bitter bear are Maine followed by West Virg
 ## Analysis 5: Show which state has the maximum alcoholic (ABV) beer and well as the most bitter.
 
 ```{r data_state_statistics}
-#
+### to get the Maximum Alcoholic beer per state
+ABV=brew.data[c('State','ABV')] # Obtain data for alcoholic contents per state
+ABV[which.max(brew.data$ABV),]['State']  # get the maximum of Alcoholic content out of all states
+
+IBU=brew.data[c('State','IBU')] # Obtain data for bitterness in beer per state
+IBU[which.max(brew.data$IBU),]['State'] # get the most bitter beer out of all states
+
+   State
+384    CO
+
+  State
+1857    OR
 
 ```
+Colorado has the higest level of Alcohol in beer out of all states
+Oregon has the most bitter beer taste out of all states
 
 ## Analysis 6: Summary of statistics for the alcohol content (ABV).
 
 ```{r data_abv_stats}
-#
-
+#Summary of Alcoholic contents in beer
+summary(ABV$ABV)
+Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+0.00100 0.05000 0.05600 0.05977 0.06700 0.12800      62 
 ```
 
 ## Analysis 7: Prove relationship between the bitterness of the beer and its alcoholic content.
