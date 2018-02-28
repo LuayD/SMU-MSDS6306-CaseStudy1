@@ -143,7 +143,7 @@ barplot(IBU_medians
 
 As per the bar plots above, the states with the highest middle or median alcohol content are DC (Washington DC) and Kentucky is around 6.25%.  Seems like a bit of political play with the politicians in DC to have such strong beer.  On the flip side, the states brewing bear with a lesser alcohol content are Utah and New Jersey with a median ABV or 4% and 4.6% respectively.  To put this more into perspective, some of the mass-produced beers like Budweiser has a %5.0 ABV, while Bud Light and Miller Light both have 4.2% (http://www.realbeer.com/edu/health/calories.php).
 
-Likewise, the states making the most bitter bear are Maine followed by West Virginia, while the states brewing the least bitter bear are Wisconsin then Kansas, with South Dakota not having any bitterness data for their brews.  As a note on this, only around half of the beers had bitterness data, so results could differ if there was more data concerning other beers.
+Likewise, the states making the most bitter beer are Maine followed by West Virginia, while the states brewing the least bitter beer are Wisconsin then Kansas, with South Dakota not having any bitterness data for their brews.  As a note on this, only around half of the beers had bitterness data, so results could differ if there was more data concerning other beers.
 
 ## Analysis 5: Show which state has the maximum alcoholic (ABV) beer and well as the most bitter.
 
